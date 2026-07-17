@@ -59,7 +59,7 @@ export async function listRows(table: TableName, request: Request): Promise<Resp
 export async function createRow(table: TableName, request: Request): Promise<Response> {
   const body = await readBody(request);
   if (Object.keys(body).length === 0) return json({ error: "Empty body" }, 400);
-  const { data, error } = await supabaseAdmin.from(table).insert(body).select().single();
+  const { data, error } = await supabaseAdmin.from(table).insert(body as never).select().single();
   if (error) return json({ error: error.message }, 400);
   return json({ data }, 201);
 }
@@ -84,7 +84,7 @@ export async function updateRow(
   if (Object.keys(body).length === 0) return json({ error: "Empty body" }, 400);
   const { data, error } = await supabaseAdmin
     .from(table)
-    .update(body)
+    .update(body as never)
     .eq("id", id)
     .select()
     .single();
