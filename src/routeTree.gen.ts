@@ -18,6 +18,20 @@ import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as CoursesRouteImport } from './routes/courses'
 import { Route as AnalyticsRouteImport } from './routes/analytics'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ApiUsersRouteImport } from './routes/api/users'
+import { Route as ApiTasksRouteImport } from './routes/api/tasks'
+import { Route as ApiReviewsRouteImport } from './routes/api/reviews'
+import { Route as ApiInstructorsRouteImport } from './routes/api/instructors'
+import { Route as ApiCoursesRouteImport } from './routes/api/courses'
+import { Route as ApiCatalogRouteImport } from './routes/api/catalog'
+import { Route as ApiAssessmentsRouteImport } from './routes/api/assessments'
+import { Route as ApiUsersIdRouteImport } from './routes/api/users.$id'
+import { Route as ApiTasksIdRouteImport } from './routes/api/tasks.$id'
+import { Route as ApiReviewsIdRouteImport } from './routes/api/reviews.$id'
+import { Route as ApiInstructorsIdRouteImport } from './routes/api/instructors.$id'
+import { Route as ApiCoursesIdRouteImport } from './routes/api/courses.$id'
+import { Route as ApiCatalogIdRouteImport } from './routes/api/catalog.$id'
+import { Route as ApiAssessmentsIdRouteImport } from './routes/api/assessments.$id'
 
 const TasksRoute = TasksRouteImport.update({
   id: '/tasks',
@@ -64,6 +78,76 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiUsersRoute = ApiUsersRouteImport.update({
+  id: '/api/users',
+  path: '/api/users',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiTasksRoute = ApiTasksRouteImport.update({
+  id: '/api/tasks',
+  path: '/api/tasks',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiReviewsRoute = ApiReviewsRouteImport.update({
+  id: '/api/reviews',
+  path: '/api/reviews',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiInstructorsRoute = ApiInstructorsRouteImport.update({
+  id: '/api/instructors',
+  path: '/api/instructors',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiCoursesRoute = ApiCoursesRouteImport.update({
+  id: '/api/courses',
+  path: '/api/courses',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiCatalogRoute = ApiCatalogRouteImport.update({
+  id: '/api/catalog',
+  path: '/api/catalog',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAssessmentsRoute = ApiAssessmentsRouteImport.update({
+  id: '/api/assessments',
+  path: '/api/assessments',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiUsersIdRoute = ApiUsersIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => ApiUsersRoute,
+} as any)
+const ApiTasksIdRoute = ApiTasksIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => ApiTasksRoute,
+} as any)
+const ApiReviewsIdRoute = ApiReviewsIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => ApiReviewsRoute,
+} as any)
+const ApiInstructorsIdRoute = ApiInstructorsIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => ApiInstructorsRoute,
+} as any)
+const ApiCoursesIdRoute = ApiCoursesIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => ApiCoursesRoute,
+} as any)
+const ApiCatalogIdRoute = ApiCatalogIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => ApiCatalogRoute,
+} as any)
+const ApiAssessmentsIdRoute = ApiAssessmentsIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => ApiAssessmentsRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -75,6 +159,20 @@ export interface FileRoutesByFullPath {
   '/reviews': typeof ReviewsRoute
   '/settings': typeof SettingsRoute
   '/tasks': typeof TasksRoute
+  '/api/assessments': typeof ApiAssessmentsRouteWithChildren
+  '/api/catalog': typeof ApiCatalogRouteWithChildren
+  '/api/courses': typeof ApiCoursesRouteWithChildren
+  '/api/instructors': typeof ApiInstructorsRouteWithChildren
+  '/api/reviews': typeof ApiReviewsRouteWithChildren
+  '/api/tasks': typeof ApiTasksRouteWithChildren
+  '/api/users': typeof ApiUsersRouteWithChildren
+  '/api/assessments/$id': typeof ApiAssessmentsIdRoute
+  '/api/catalog/$id': typeof ApiCatalogIdRoute
+  '/api/courses/$id': typeof ApiCoursesIdRoute
+  '/api/instructors/$id': typeof ApiInstructorsIdRoute
+  '/api/reviews/$id': typeof ApiReviewsIdRoute
+  '/api/tasks/$id': typeof ApiTasksIdRoute
+  '/api/users/$id': typeof ApiUsersIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -86,6 +184,20 @@ export interface FileRoutesByTo {
   '/reviews': typeof ReviewsRoute
   '/settings': typeof SettingsRoute
   '/tasks': typeof TasksRoute
+  '/api/assessments': typeof ApiAssessmentsRouteWithChildren
+  '/api/catalog': typeof ApiCatalogRouteWithChildren
+  '/api/courses': typeof ApiCoursesRouteWithChildren
+  '/api/instructors': typeof ApiInstructorsRouteWithChildren
+  '/api/reviews': typeof ApiReviewsRouteWithChildren
+  '/api/tasks': typeof ApiTasksRouteWithChildren
+  '/api/users': typeof ApiUsersRouteWithChildren
+  '/api/assessments/$id': typeof ApiAssessmentsIdRoute
+  '/api/catalog/$id': typeof ApiCatalogIdRoute
+  '/api/courses/$id': typeof ApiCoursesIdRoute
+  '/api/instructors/$id': typeof ApiInstructorsIdRoute
+  '/api/reviews/$id': typeof ApiReviewsIdRoute
+  '/api/tasks/$id': typeof ApiTasksIdRoute
+  '/api/users/$id': typeof ApiUsersIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -98,6 +210,20 @@ export interface FileRoutesById {
   '/reviews': typeof ReviewsRoute
   '/settings': typeof SettingsRoute
   '/tasks': typeof TasksRoute
+  '/api/assessments': typeof ApiAssessmentsRouteWithChildren
+  '/api/catalog': typeof ApiCatalogRouteWithChildren
+  '/api/courses': typeof ApiCoursesRouteWithChildren
+  '/api/instructors': typeof ApiInstructorsRouteWithChildren
+  '/api/reviews': typeof ApiReviewsRouteWithChildren
+  '/api/tasks': typeof ApiTasksRouteWithChildren
+  '/api/users': typeof ApiUsersRouteWithChildren
+  '/api/assessments/$id': typeof ApiAssessmentsIdRoute
+  '/api/catalog/$id': typeof ApiCatalogIdRoute
+  '/api/courses/$id': typeof ApiCoursesIdRoute
+  '/api/instructors/$id': typeof ApiInstructorsIdRoute
+  '/api/reviews/$id': typeof ApiReviewsIdRoute
+  '/api/tasks/$id': typeof ApiTasksIdRoute
+  '/api/users/$id': typeof ApiUsersIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -111,6 +237,20 @@ export interface FileRouteTypes {
     | '/reviews'
     | '/settings'
     | '/tasks'
+    | '/api/assessments'
+    | '/api/catalog'
+    | '/api/courses'
+    | '/api/instructors'
+    | '/api/reviews'
+    | '/api/tasks'
+    | '/api/users'
+    | '/api/assessments/$id'
+    | '/api/catalog/$id'
+    | '/api/courses/$id'
+    | '/api/instructors/$id'
+    | '/api/reviews/$id'
+    | '/api/tasks/$id'
+    | '/api/users/$id'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -122,6 +262,20 @@ export interface FileRouteTypes {
     | '/reviews'
     | '/settings'
     | '/tasks'
+    | '/api/assessments'
+    | '/api/catalog'
+    | '/api/courses'
+    | '/api/instructors'
+    | '/api/reviews'
+    | '/api/tasks'
+    | '/api/users'
+    | '/api/assessments/$id'
+    | '/api/catalog/$id'
+    | '/api/courses/$id'
+    | '/api/instructors/$id'
+    | '/api/reviews/$id'
+    | '/api/tasks/$id'
+    | '/api/users/$id'
   id:
     | '__root__'
     | '/'
@@ -133,6 +287,20 @@ export interface FileRouteTypes {
     | '/reviews'
     | '/settings'
     | '/tasks'
+    | '/api/assessments'
+    | '/api/catalog'
+    | '/api/courses'
+    | '/api/instructors'
+    | '/api/reviews'
+    | '/api/tasks'
+    | '/api/users'
+    | '/api/assessments/$id'
+    | '/api/catalog/$id'
+    | '/api/courses/$id'
+    | '/api/instructors/$id'
+    | '/api/reviews/$id'
+    | '/api/tasks/$id'
+    | '/api/users/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -145,6 +313,13 @@ export interface RootRouteChildren {
   ReviewsRoute: typeof ReviewsRoute
   SettingsRoute: typeof SettingsRoute
   TasksRoute: typeof TasksRoute
+  ApiAssessmentsRoute: typeof ApiAssessmentsRouteWithChildren
+  ApiCatalogRoute: typeof ApiCatalogRouteWithChildren
+  ApiCoursesRoute: typeof ApiCoursesRouteWithChildren
+  ApiInstructorsRoute: typeof ApiInstructorsRouteWithChildren
+  ApiReviewsRoute: typeof ApiReviewsRouteWithChildren
+  ApiTasksRoute: typeof ApiTasksRouteWithChildren
+  ApiUsersRoute: typeof ApiUsersRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -212,8 +387,190 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/users': {
+      id: '/api/users'
+      path: '/api/users'
+      fullPath: '/api/users'
+      preLoaderRoute: typeof ApiUsersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/tasks': {
+      id: '/api/tasks'
+      path: '/api/tasks'
+      fullPath: '/api/tasks'
+      preLoaderRoute: typeof ApiTasksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/reviews': {
+      id: '/api/reviews'
+      path: '/api/reviews'
+      fullPath: '/api/reviews'
+      preLoaderRoute: typeof ApiReviewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/instructors': {
+      id: '/api/instructors'
+      path: '/api/instructors'
+      fullPath: '/api/instructors'
+      preLoaderRoute: typeof ApiInstructorsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/courses': {
+      id: '/api/courses'
+      path: '/api/courses'
+      fullPath: '/api/courses'
+      preLoaderRoute: typeof ApiCoursesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/catalog': {
+      id: '/api/catalog'
+      path: '/api/catalog'
+      fullPath: '/api/catalog'
+      preLoaderRoute: typeof ApiCatalogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/assessments': {
+      id: '/api/assessments'
+      path: '/api/assessments'
+      fullPath: '/api/assessments'
+      preLoaderRoute: typeof ApiAssessmentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/users/$id': {
+      id: '/api/users/$id'
+      path: '/$id'
+      fullPath: '/api/users/$id'
+      preLoaderRoute: typeof ApiUsersIdRouteImport
+      parentRoute: typeof ApiUsersRoute
+    }
+    '/api/tasks/$id': {
+      id: '/api/tasks/$id'
+      path: '/$id'
+      fullPath: '/api/tasks/$id'
+      preLoaderRoute: typeof ApiTasksIdRouteImport
+      parentRoute: typeof ApiTasksRoute
+    }
+    '/api/reviews/$id': {
+      id: '/api/reviews/$id'
+      path: '/$id'
+      fullPath: '/api/reviews/$id'
+      preLoaderRoute: typeof ApiReviewsIdRouteImport
+      parentRoute: typeof ApiReviewsRoute
+    }
+    '/api/instructors/$id': {
+      id: '/api/instructors/$id'
+      path: '/$id'
+      fullPath: '/api/instructors/$id'
+      preLoaderRoute: typeof ApiInstructorsIdRouteImport
+      parentRoute: typeof ApiInstructorsRoute
+    }
+    '/api/courses/$id': {
+      id: '/api/courses/$id'
+      path: '/$id'
+      fullPath: '/api/courses/$id'
+      preLoaderRoute: typeof ApiCoursesIdRouteImport
+      parentRoute: typeof ApiCoursesRoute
+    }
+    '/api/catalog/$id': {
+      id: '/api/catalog/$id'
+      path: '/$id'
+      fullPath: '/api/catalog/$id'
+      preLoaderRoute: typeof ApiCatalogIdRouteImport
+      parentRoute: typeof ApiCatalogRoute
+    }
+    '/api/assessments/$id': {
+      id: '/api/assessments/$id'
+      path: '/$id'
+      fullPath: '/api/assessments/$id'
+      preLoaderRoute: typeof ApiAssessmentsIdRouteImport
+      parentRoute: typeof ApiAssessmentsRoute
+    }
   }
 }
+
+interface ApiAssessmentsRouteChildren {
+  ApiAssessmentsIdRoute: typeof ApiAssessmentsIdRoute
+}
+
+const ApiAssessmentsRouteChildren: ApiAssessmentsRouteChildren = {
+  ApiAssessmentsIdRoute: ApiAssessmentsIdRoute,
+}
+
+const ApiAssessmentsRouteWithChildren = ApiAssessmentsRoute._addFileChildren(
+  ApiAssessmentsRouteChildren,
+)
+
+interface ApiCatalogRouteChildren {
+  ApiCatalogIdRoute: typeof ApiCatalogIdRoute
+}
+
+const ApiCatalogRouteChildren: ApiCatalogRouteChildren = {
+  ApiCatalogIdRoute: ApiCatalogIdRoute,
+}
+
+const ApiCatalogRouteWithChildren = ApiCatalogRoute._addFileChildren(
+  ApiCatalogRouteChildren,
+)
+
+interface ApiCoursesRouteChildren {
+  ApiCoursesIdRoute: typeof ApiCoursesIdRoute
+}
+
+const ApiCoursesRouteChildren: ApiCoursesRouteChildren = {
+  ApiCoursesIdRoute: ApiCoursesIdRoute,
+}
+
+const ApiCoursesRouteWithChildren = ApiCoursesRoute._addFileChildren(
+  ApiCoursesRouteChildren,
+)
+
+interface ApiInstructorsRouteChildren {
+  ApiInstructorsIdRoute: typeof ApiInstructorsIdRoute
+}
+
+const ApiInstructorsRouteChildren: ApiInstructorsRouteChildren = {
+  ApiInstructorsIdRoute: ApiInstructorsIdRoute,
+}
+
+const ApiInstructorsRouteWithChildren = ApiInstructorsRoute._addFileChildren(
+  ApiInstructorsRouteChildren,
+)
+
+interface ApiReviewsRouteChildren {
+  ApiReviewsIdRoute: typeof ApiReviewsIdRoute
+}
+
+const ApiReviewsRouteChildren: ApiReviewsRouteChildren = {
+  ApiReviewsIdRoute: ApiReviewsIdRoute,
+}
+
+const ApiReviewsRouteWithChildren = ApiReviewsRoute._addFileChildren(
+  ApiReviewsRouteChildren,
+)
+
+interface ApiTasksRouteChildren {
+  ApiTasksIdRoute: typeof ApiTasksIdRoute
+}
+
+const ApiTasksRouteChildren: ApiTasksRouteChildren = {
+  ApiTasksIdRoute: ApiTasksIdRoute,
+}
+
+const ApiTasksRouteWithChildren = ApiTasksRoute._addFileChildren(
+  ApiTasksRouteChildren,
+)
+
+interface ApiUsersRouteChildren {
+  ApiUsersIdRoute: typeof ApiUsersIdRoute
+}
+
+const ApiUsersRouteChildren: ApiUsersRouteChildren = {
+  ApiUsersIdRoute: ApiUsersIdRoute,
+}
+
+const ApiUsersRouteWithChildren = ApiUsersRoute._addFileChildren(
+  ApiUsersRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
@@ -225,6 +582,13 @@ const rootRouteChildren: RootRouteChildren = {
   ReviewsRoute: ReviewsRoute,
   SettingsRoute: SettingsRoute,
   TasksRoute: TasksRoute,
+  ApiAssessmentsRoute: ApiAssessmentsRouteWithChildren,
+  ApiCatalogRoute: ApiCatalogRouteWithChildren,
+  ApiCoursesRoute: ApiCoursesRouteWithChildren,
+  ApiInstructorsRoute: ApiInstructorsRouteWithChildren,
+  ApiReviewsRoute: ApiReviewsRouteWithChildren,
+  ApiTasksRoute: ApiTasksRouteWithChildren,
+  ApiUsersRoute: ApiUsersRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
