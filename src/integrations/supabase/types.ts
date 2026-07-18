@@ -97,39 +97,54 @@ export type Database = {
       courses: {
         Row: {
           catalog_id: number
+          color: string
           created_at: string
           credits: number | null
+          difficulty: string
           grade: string | null
           id: number
           instructor_id: number | null
+          progress: number
           status: string
+          target_grade: string | null
           term: string
           updated_at: string
           user_id: number
+          weekly_study_hours: number
         }
         Insert: {
           catalog_id: number
+          color?: string
           created_at?: string
           credits?: number | null
+          difficulty?: string
           grade?: string | null
           id?: number
           instructor_id?: number | null
+          progress?: number
           status?: string
+          target_grade?: string | null
           term: string
           updated_at?: string
           user_id: number
+          weekly_study_hours?: number
         }
         Update: {
           catalog_id?: number
+          color?: string
           created_at?: string
           credits?: number | null
+          difficulty?: string
           grade?: string | null
           id?: number
           instructor_id?: number | null
+          progress?: number
           status?: string
+          target_grade?: string | null
           term?: string
           updated_at?: string
           user_id?: number
+          weekly_study_hours?: number
         }
         Relationships: [
           {
