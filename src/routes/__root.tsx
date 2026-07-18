@@ -84,6 +84,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:description", content: "AI-powered copilot for academic research, writing, and learning." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "AI Academic Copilot" },
+      { name: "twitter:description", content: "AI-powered copilot for academic research, writing, and learning." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/c44bddcc-2a01-4817-b5f8-8b78134e7aad/id-preview-4f00b5ff--beb43779-0424-4cc0-a29b-327d43663d46.lovable.app-1784365088298.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/c44bddcc-2a01-4817-b5f8-8b78134e7aad/id-preview-4f00b5ff--beb43779-0424-4cc0-a29b-327d43663d46.lovable.app-1784365088298.png" },
     ],
     links: [
       {
