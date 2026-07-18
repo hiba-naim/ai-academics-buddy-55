@@ -65,7 +65,8 @@ const COLORS = ["#22c55e", "#3b82f6", "#a855f7", "#f59e0b", "#ef4444", "#06b6d4"
 const DIFFICULTIES = ["easy", "medium", "hard"];
 const STATUSES = ["in_progress", "completed", "planned", "dropped"];
 
-type CourseRow = ReturnType<typeof useSuspenseQuery<typeof coursesQuery>>["data"]["courses"][number];
+type CoursesData = Awaited<ReturnType<typeof getCoursesPageData>>;
+type CourseRow = CoursesData["courses"][number];
 
 type FormState = {
   id?: number;
