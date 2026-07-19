@@ -261,36 +261,45 @@ export type Database = {
           created_at: string
           description: string | null
           due_date: string | null
+          estimated_minutes: number
           id: number
           priority: string
           status: string
+          task_type: string
           title: string
           updated_at: string
           user_id: number
+          weight: number
         }
         Insert: {
           course_id?: number | null
           created_at?: string
           description?: string | null
           due_date?: string | null
+          estimated_minutes?: number
           id?: number
           priority?: string
           status?: string
+          task_type?: string
           title: string
           updated_at?: string
           user_id: number
+          weight?: number
         }
         Update: {
           course_id?: number | null
           created_at?: string
           description?: string | null
           due_date?: string | null
+          estimated_minutes?: number
           id?: number
           priority?: string
           status?: string
+          task_type?: string
           title?: string
           updated_at?: string
           user_id?: number
+          weight?: number
         }
         Relationships: [
           {
