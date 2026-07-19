@@ -29,8 +29,7 @@ export const updateCourseGrade = createServerFn({ method: "POST" })
   .inputValidator((d: { id: number; grade: string | null; target_grade?: string | null }) => d)
   .handler(async ({ data }) => {
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
-    const patch: Record<string, unknown> = { grade: data.grade };
-    if (data.target_grade !== undefined) patch.target_grade = data.target_grade;
+    const patch = { grade: data.grade, target_grade: data.target_grade ?? null };
     const { error } = await supabaseAdmin
       .from("courses")
       .update(patch)
