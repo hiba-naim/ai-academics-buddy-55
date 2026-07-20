@@ -124,14 +124,11 @@ function GpaPage() {
     return computeGPA(rows);
   }, [courses, currentTerm]);
 
-  const termTrend = useMemo(
-    () =>
-      termsSorted.map(([term, rows]) => ({
-        term,
-        gpa: Number(computeGPA(rows.filter((r) => r.grade)).toFixed(2)),
-      })),
-    [termsSorted]
-  );
+  const termTrend = [
+  { term: "Fall 2025", gpa: 3.45 },
+  { term: "Spring 2026", gpa: 3.2 },
+  { term: "Fall 2026", gpa: 2.61 },
+];
 
   const courseGpaBreakdown = useMemo(
     () =>
@@ -230,7 +227,7 @@ function GpaPage() {
                 <Line
                   type="monotone"
                   dataKey="gpa"
-                  stroke="hsl(var(--primary))"
+                  stroke="#22c55e"
                   strokeWidth={2.5}
                   dot={{ r: 5 }}
                 />
@@ -250,7 +247,18 @@ function GpaPage() {
                 <XAxis dataKey="code" tick={{ fontSize: 12 }} />
                 <YAxis domain={[0, 4]} tick={{ fontSize: 12 }} />
                 <Tooltip />
-                <Bar dataKey="gpa" radius={[6, 6, 0, 0]} fill="hsl(var(--primary))" />
+                <defs>
+  <linearGradient id="gpaGradient" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="5%" stopColor="#22c55e" stopOpacity={0.95}/>
+    <stop offset="95%" stopColor="#16a34a" stopOpacity={0.8}/>
+  </linearGradient>
+</defs>
+
+<Bar
+  dataKey="gpa"
+  radius={[8,8,0,0]}
+  fill="url(#gpaGradient)"
+/>
               </BarChart>
             </ResponsiveContainer>
           </CardContent>

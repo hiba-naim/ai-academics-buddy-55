@@ -29,7 +29,7 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { getDashboardData } from "@/lib/dashboard.functions";
 
-const TARGET_GPA = 3.9;
+const TARGET_GPA = 3.30;
 
 const dashboardQuery = queryOptions({
   queryKey: ["dashboard"],
@@ -57,7 +57,7 @@ function DashboardPage() {
   const { data } = useSuspenseQuery(dashboardQuery);
   const d = data as DashboardData;
 
-  const currentGpa = Number(d.user?.gpa ?? 0);
+  const currentGpa = 2.61;
   const activeCourses = d.courses.filter((c: any) => c.status === "in_progress");
   const now = new Date();
   const in14 = new Date(now.getTime() + 14 * 86400000);
@@ -100,24 +100,16 @@ function DashboardPage() {
   void termAssessments;
   void in14;
 
-  // Weekly study hours: derive estimate from tasks due each weekday (this week Mon-Sun)
-  const weekStart = new Date(now);
-  const day = (weekStart.getDay() + 6) % 7; // 0=Mon
-  weekStart.setDate(weekStart.getDate() - day);
-  weekStart.setHours(0, 0, 0, 0);
-  const dayLabels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-  const weekly = dayLabels.map((label, i) => {
-    const dayDate = new Date(weekStart.getTime() + i * 86400000);
-    const iso = dayDate.toISOString().slice(0, 10);
-    const dayTasks = d.tasks.filter((t: any) => t.due_date?.slice(0, 10) === iso);
-    const hours = dayTasks.reduce((s: number, t: any) => {
-      const w = t.priority === "high" ? 3.5 : t.priority === "medium" ? 2 : 1;
-      return s + w;
-    }, 0);
-    // baseline daily study from active courses
-    const baseline = activeCourses.length * 0.75;
-    return { day: label, hours: +(hours + baseline).toFixed(1) };
-  });
+  // Weekly study hours (realistic demo data)
+const weekly = [
+  { day: "Mon", hours: 2.5 },
+  { day: "Tue", hours: 3 },
+  { day: "Wed", hours: 1.5 },
+  { day: "Thu", hours: 4 },
+  { day: "Fri", hours: 2 },
+  { day: "Sat", hours: 5 },
+  { day: "Sun", hours: 3 },
+];
 
   // Course performance: avg % per active course
   const performance = activeCourses.map((c: any) => {
@@ -214,13 +206,13 @@ function DashboardPage() {
                 />
                 <Legend wrapperStyle={{ fontSize: 12 }} />
                 <Line
-                  type="monotone"
-                  dataKey="hours"
-                  stroke="hsl(var(--primary))"
-                  strokeWidth={2.5}
-                  dot={{ r: 4 }}
-                  activeDot={{ r: 6 }}
-                />
+  type="monotone"
+  dataKey="hours"
+  stroke="#22c55e"
+  strokeWidth={3}
+  dot={{ r: 5, fill: "#22c55e" }}
+  activeDot={{ r: 7, fill: "#16a34a" }}
+/>
               </LineChart>
             </ResponsiveContainer>
           </CardContent>
@@ -250,7 +242,11 @@ function DashboardPage() {
                       fontSize: 12,
                     }}
                   />
-                  <Bar dataKey="score" fill="hsl(var(--primary))" radius={[6, 6, 0, 0]} />
+                  <Bar
+  dataKey="score"
+  fill="#10b981"
+  radius={[8, 8, 0, 0]}
+/>
                 </BarChart>
               </ResponsiveContainer>
             )}

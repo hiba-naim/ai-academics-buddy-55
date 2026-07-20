@@ -94,6 +94,64 @@ export type Database = {
         }
         Relationships: []
       }
+      semester_plan_items: {
+        Row: {
+          catalog_id: number
+          created_at: string
+          difficulty: string
+          id: number
+          priority: string
+          semester_id: number
+          status: string
+          updated_at: string
+          user_id: number
+        }
+        Insert: {
+          catalog_id: number
+          created_at?: string
+          difficulty?: string
+          id?: number
+          priority?: string
+          semester_id: number
+          status?: string
+          updated_at?: string
+          user_id: number
+        }
+        Update: {
+          catalog_id?: number
+          created_at?: string
+          difficulty?: string
+          id?: number
+          priority?: string
+          semester_id?: number
+          status?: string
+          updated_at?: string
+          user_id?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "semester_plan_items_catalog_id_fkey"
+            columns: ["catalog_id"]
+            isOneToOne: false
+            referencedRelation: "course_catalog"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "semester_plan_items_semester_id_fkey"
+            columns: ["semester_id"]
+            isOneToOne: false
+            referencedRelation: "semesters"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "semester_plan_items_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       courses: {
         Row: {
           catalog_id: number
@@ -170,6 +228,41 @@ export type Database = {
           },
         ]
       }
+      semesters: {
+        Row: {
+          academic_year: number
+          created_at: string
+          id: number
+          term: string
+          updated_at: string
+          user_id: number
+        }
+        Insert: {
+          academic_year: number
+          created_at?: string
+          id?: number
+          term: string
+          updated_at?: string
+          user_id: number
+        }
+        Update: {
+          academic_year?: number
+          created_at?: string
+          id?: number
+          term?: string
+          updated_at?: string
+          user_id?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "semesters_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       instructors: {
         Row: {
           bio: string | null
@@ -202,32 +295,41 @@ export type Database = {
       }
       reviews: {
         Row: {
+          course_difficulty_rating: number
           comment: string | null
           course_id: number | null
           created_at: string
           id: number
           instructor_id: number
           rating: number
+          teaching_quality_rating: number
+          workload_rating: number
           updated_at: string
           user_id: number
         }
         Insert: {
+          course_difficulty_rating?: number
           comment?: string | null
           course_id?: number | null
           created_at?: string
           id?: number
           instructor_id: number
           rating: number
+          teaching_quality_rating?: number
+          workload_rating?: number
           updated_at?: string
           user_id: number
         }
         Update: {
+          course_difficulty_rating?: number
           comment?: string | null
           course_id?: number | null
           created_at?: string
           id?: number
           instructor_id?: number
           rating?: number
+          teaching_quality_rating?: number
+          workload_rating?: number
           updated_at?: string
           user_id?: number
         }
@@ -326,7 +428,26 @@ export type Database = {
           full_name: string
           gpa: number | null
           id: number
+          university: string | null
           major: string | null
+          graduation_year: number | null
+          target_gpa: number | null
+          weekly_study_goal_hours: number | null
+          preferred_study_days: string[] | null
+          preferred_study_session_length: number | null
+          default_semester: string | null
+          max_credits_per_semester: number | null
+          preferred_workload: string | null
+          max_difficult_courses: number | null
+          show_ai_recommendations: boolean
+          enable_planner_warnings: boolean
+          notify_assignments: boolean
+          notify_exams: boolean
+          notify_weekly_summary: boolean
+          notify_registration: boolean
+          theme: string
+          compact_mode: boolean
+          animations_enabled: boolean
           updated_at: string
           year: number | null
         }
@@ -337,7 +458,26 @@ export type Database = {
           full_name: string
           gpa?: number | null
           id?: number
+          university?: string | null
           major?: string | null
+          graduation_year?: number | null
+          target_gpa?: number | null
+          weekly_study_goal_hours?: number | null
+          preferred_study_days?: string[] | null
+          preferred_study_session_length?: number | null
+          default_semester?: string | null
+          max_credits_per_semester?: number | null
+          preferred_workload?: string | null
+          max_difficult_courses?: number | null
+          show_ai_recommendations?: boolean
+          enable_planner_warnings?: boolean
+          notify_assignments?: boolean
+          notify_exams?: boolean
+          notify_weekly_summary?: boolean
+          notify_registration?: boolean
+          theme?: string
+          compact_mode?: boolean
+          animations_enabled?: boolean
           updated_at?: string
           year?: number | null
         }
@@ -348,7 +488,26 @@ export type Database = {
           full_name?: string
           gpa?: number | null
           id?: number
+          university?: string | null
           major?: string | null
+          graduation_year?: number | null
+          target_gpa?: number | null
+          weekly_study_goal_hours?: number | null
+          preferred_study_days?: string[] | null
+          preferred_study_session_length?: number | null
+          default_semester?: string | null
+          max_credits_per_semester?: number | null
+          preferred_workload?: string | null
+          max_difficult_courses?: number | null
+          show_ai_recommendations?: boolean
+          enable_planner_warnings?: boolean
+          notify_assignments?: boolean
+          notify_exams?: boolean
+          notify_weekly_summary?: boolean
+          notify_registration?: boolean
+          theme?: string
+          compact_mode?: boolean
+          animations_enabled?: boolean
           updated_at?: string
           year?: number | null
         }

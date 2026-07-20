@@ -9,63 +9,33 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as TasksRouteImport } from './routes/tasks'
-import { Route as SettingsRouteImport } from './routes/settings'
-import { Route as ReviewsRouteImport } from './routes/reviews'
-import { Route as RegistrationRouteImport } from './routes/registration'
-import { Route as GpaRouteImport } from './routes/gpa'
-import { Route as DashboardRouteImport } from './routes/dashboard'
-import { Route as CoursesRouteImport } from './routes/courses'
-import { Route as AnalyticsRouteImport } from './routes/analytics'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ApiUsersRouteImport } from './routes/api/users'
-import { Route as ApiTasksRouteImport } from './routes/api/tasks'
-import { Route as ApiReviewsRouteImport } from './routes/api/reviews'
-import { Route as ApiInstructorsRouteImport } from './routes/api/instructors'
-import { Route as ApiCoursesRouteImport } from './routes/api/courses'
-import { Route as ApiCatalogRouteImport } from './routes/api/catalog'
+import { Route as AnalyticsRouteImport } from './routes/analytics'
+import { Route as CoursesRouteImport } from './routes/courses'
+import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as GpaRouteImport } from './routes/gpa'
+import { Route as RegistrationRouteImport } from './routes/registration'
+import { Route as ReviewsRouteImport } from './routes/reviews'
+import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as TasksRouteImport } from './routes/tasks'
 import { Route as ApiAssessmentsRouteImport } from './routes/api/assessments'
-import { Route as ApiUsersIdRouteImport } from './routes/api/users.$id'
-import { Route as ApiTasksIdRouteImport } from './routes/api/tasks.$id'
-import { Route as ApiReviewsIdRouteImport } from './routes/api/reviews.$id'
-import { Route as ApiInstructorsIdRouteImport } from './routes/api/instructors.$id'
-import { Route as ApiCoursesIdRouteImport } from './routes/api/courses.$id'
-import { Route as ApiCatalogIdRouteImport } from './routes/api/catalog.$id'
+import { Route as ApiCatalogRouteImport } from './routes/api/catalog'
+import { Route as ApiCoursesRouteImport } from './routes/api/courses'
+import { Route as ApiInstructorsRouteImport } from './routes/api/instructors'
+import { Route as ApiReviewsRouteImport } from './routes/api/reviews'
+import { Route as ApiTasksRouteImport } from './routes/api/tasks'
+import { Route as ApiUsersRouteImport } from './routes/api/users'
 import { Route as ApiAssessmentsIdRouteImport } from './routes/api/assessments.$id'
+import { Route as ApiCatalogIdRouteImport } from './routes/api/catalog.$id'
+import { Route as ApiCoursesIdRouteImport } from './routes/api/courses.$id'
+import { Route as ApiInstructorsIdRouteImport } from './routes/api/instructors.$id'
+import { Route as ApiReviewsIdRouteImport } from './routes/api/reviews.$id'
+import { Route as ApiTasksIdRouteImport } from './routes/api/tasks.$id'
+import { Route as ApiUsersIdRouteImport } from './routes/api/users.$id'
 
-const TasksRoute = TasksRouteImport.update({
-  id: '/tasks',
-  path: '/tasks',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SettingsRoute = SettingsRouteImport.update({
-  id: '/settings',
-  path: '/settings',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ReviewsRoute = ReviewsRouteImport.update({
-  id: '/reviews',
-  path: '/reviews',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RegistrationRoute = RegistrationRouteImport.update({
-  id: '/registration',
-  path: '/registration',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const GpaRoute = GpaRouteImport.update({
-  id: '/gpa',
-  path: '/gpa',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DashboardRoute = DashboardRouteImport.update({
-  id: '/dashboard',
-  path: '/dashboard',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CoursesRoute = CoursesRouteImport.update({
-  id: '/courses',
-  path: '/courses',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AnalyticsRoute = AnalyticsRouteImport.update({
@@ -73,39 +43,39 @@ const AnalyticsRoute = AnalyticsRouteImport.update({
   path: '/analytics',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const CoursesRoute = CoursesRouteImport.update({
+  id: '/courses',
+  path: '/courses',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiUsersRoute = ApiUsersRouteImport.update({
-  id: '/api/users',
-  path: '/api/users',
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiTasksRoute = ApiTasksRouteImport.update({
-  id: '/api/tasks',
-  path: '/api/tasks',
+const GpaRoute = GpaRouteImport.update({
+  id: '/gpa',
+  path: '/gpa',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiReviewsRoute = ApiReviewsRouteImport.update({
-  id: '/api/reviews',
-  path: '/api/reviews',
+const RegistrationRoute = RegistrationRouteImport.update({
+  id: '/registration',
+  path: '/registration',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiInstructorsRoute = ApiInstructorsRouteImport.update({
-  id: '/api/instructors',
-  path: '/api/instructors',
+const ReviewsRoute = ReviewsRouteImport.update({
+  id: '/reviews',
+  path: '/reviews',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiCoursesRoute = ApiCoursesRouteImport.update({
-  id: '/api/courses',
-  path: '/api/courses',
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiCatalogRoute = ApiCatalogRouteImport.update({
-  id: '/api/catalog',
-  path: '/api/catalog',
+const TasksRoute = TasksRouteImport.update({
+  id: '/tasks',
+  path: '/tasks',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiAssessmentsRoute = ApiAssessmentsRouteImport.update({
@@ -113,40 +83,70 @@ const ApiAssessmentsRoute = ApiAssessmentsRouteImport.update({
   path: '/api/assessments',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiUsersIdRoute = ApiUsersIdRouteImport.update({
-  id: '/$id',
-  path: '/$id',
-  getParentRoute: () => ApiUsersRoute,
+const ApiCatalogRoute = ApiCatalogRouteImport.update({
+  id: '/api/catalog',
+  path: '/api/catalog',
+  getParentRoute: () => rootRouteImport,
 } as any)
-const ApiTasksIdRoute = ApiTasksIdRouteImport.update({
-  id: '/$id',
-  path: '/$id',
-  getParentRoute: () => ApiTasksRoute,
+const ApiCoursesRoute = ApiCoursesRouteImport.update({
+  id: '/api/courses',
+  path: '/api/courses',
+  getParentRoute: () => rootRouteImport,
 } as any)
-const ApiReviewsIdRoute = ApiReviewsIdRouteImport.update({
-  id: '/$id',
-  path: '/$id',
-  getParentRoute: () => ApiReviewsRoute,
+const ApiInstructorsRoute = ApiInstructorsRouteImport.update({
+  id: '/api/instructors',
+  path: '/api/instructors',
+  getParentRoute: () => rootRouteImport,
 } as any)
-const ApiInstructorsIdRoute = ApiInstructorsIdRouteImport.update({
-  id: '/$id',
-  path: '/$id',
-  getParentRoute: () => ApiInstructorsRoute,
+const ApiReviewsRoute = ApiReviewsRouteImport.update({
+  id: '/api/reviews',
+  path: '/api/reviews',
+  getParentRoute: () => rootRouteImport,
 } as any)
-const ApiCoursesIdRoute = ApiCoursesIdRouteImport.update({
+const ApiTasksRoute = ApiTasksRouteImport.update({
+  id: '/api/tasks',
+  path: '/api/tasks',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiUsersRoute = ApiUsersRouteImport.update({
+  id: '/api/users',
+  path: '/api/users',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAssessmentsIdRoute = ApiAssessmentsIdRouteImport.update({
   id: '/$id',
   path: '/$id',
-  getParentRoute: () => ApiCoursesRoute,
+  getParentRoute: () => ApiAssessmentsRoute,
 } as any)
 const ApiCatalogIdRoute = ApiCatalogIdRouteImport.update({
   id: '/$id',
   path: '/$id',
   getParentRoute: () => ApiCatalogRoute,
 } as any)
-const ApiAssessmentsIdRoute = ApiAssessmentsIdRouteImport.update({
+const ApiCoursesIdRoute = ApiCoursesIdRouteImport.update({
   id: '/$id',
   path: '/$id',
-  getParentRoute: () => ApiAssessmentsRoute,
+  getParentRoute: () => ApiCoursesRoute,
+} as any)
+const ApiInstructorsIdRoute = ApiInstructorsIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => ApiInstructorsRoute,
+} as any)
+const ApiReviewsIdRoute = ApiReviewsIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => ApiReviewsRoute,
+} as any)
+const ApiTasksIdRoute = ApiTasksIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => ApiTasksRoute,
+} as any)
+const ApiUsersIdRoute = ApiUsersIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => ApiUsersRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
@@ -324,53 +324,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/tasks': {
-      id: '/tasks'
-      path: '/tasks'
-      fullPath: '/tasks'
-      preLoaderRoute: typeof TasksRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/settings': {
-      id: '/settings'
-      path: '/settings'
-      fullPath: '/settings'
-      preLoaderRoute: typeof SettingsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/reviews': {
-      id: '/reviews'
-      path: '/reviews'
-      fullPath: '/reviews'
-      preLoaderRoute: typeof ReviewsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/registration': {
-      id: '/registration'
-      path: '/registration'
-      fullPath: '/registration'
-      preLoaderRoute: typeof RegistrationRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/gpa': {
-      id: '/gpa'
-      path: '/gpa'
-      fullPath: '/gpa'
-      preLoaderRoute: typeof GpaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/dashboard': {
-      id: '/dashboard'
-      path: '/dashboard'
-      fullPath: '/dashboard'
-      preLoaderRoute: typeof DashboardRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/courses': {
-      id: '/courses'
-      path: '/courses'
-      fullPath: '/courses'
-      preLoaderRoute: typeof CoursesRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/analytics': {
@@ -380,53 +338,53 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AnalyticsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/courses': {
+      id: '/courses'
+      path: '/courses'
+      fullPath: '/courses'
+      preLoaderRoute: typeof CoursesRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/users': {
-      id: '/api/users'
-      path: '/api/users'
-      fullPath: '/api/users'
-      preLoaderRoute: typeof ApiUsersRouteImport
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/tasks': {
-      id: '/api/tasks'
-      path: '/api/tasks'
-      fullPath: '/api/tasks'
-      preLoaderRoute: typeof ApiTasksRouteImport
+    '/gpa': {
+      id: '/gpa'
+      path: '/gpa'
+      fullPath: '/gpa'
+      preLoaderRoute: typeof GpaRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/reviews': {
-      id: '/api/reviews'
-      path: '/api/reviews'
-      fullPath: '/api/reviews'
-      preLoaderRoute: typeof ApiReviewsRouteImport
+    '/registration': {
+      id: '/registration'
+      path: '/registration'
+      fullPath: '/registration'
+      preLoaderRoute: typeof RegistrationRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/instructors': {
-      id: '/api/instructors'
-      path: '/api/instructors'
-      fullPath: '/api/instructors'
-      preLoaderRoute: typeof ApiInstructorsRouteImport
+    '/reviews': {
+      id: '/reviews'
+      path: '/reviews'
+      fullPath: '/reviews'
+      preLoaderRoute: typeof ReviewsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/courses': {
-      id: '/api/courses'
-      path: '/api/courses'
-      fullPath: '/api/courses'
-      preLoaderRoute: typeof ApiCoursesRouteImport
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/catalog': {
-      id: '/api/catalog'
-      path: '/api/catalog'
-      fullPath: '/api/catalog'
-      preLoaderRoute: typeof ApiCatalogRouteImport
+    '/tasks': {
+      id: '/tasks'
+      path: '/tasks'
+      fullPath: '/tasks'
+      preLoaderRoute: typeof TasksRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/assessments': {
@@ -436,40 +394,54 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiAssessmentsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/users/$id': {
-      id: '/api/users/$id'
-      path: '/$id'
-      fullPath: '/api/users/$id'
-      preLoaderRoute: typeof ApiUsersIdRouteImport
-      parentRoute: typeof ApiUsersRoute
+    '/api/catalog': {
+      id: '/api/catalog'
+      path: '/api/catalog'
+      fullPath: '/api/catalog'
+      preLoaderRoute: typeof ApiCatalogRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/api/tasks/$id': {
-      id: '/api/tasks/$id'
-      path: '/$id'
-      fullPath: '/api/tasks/$id'
-      preLoaderRoute: typeof ApiTasksIdRouteImport
-      parentRoute: typeof ApiTasksRoute
+    '/api/courses': {
+      id: '/api/courses'
+      path: '/api/courses'
+      fullPath: '/api/courses'
+      preLoaderRoute: typeof ApiCoursesRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/api/reviews/$id': {
-      id: '/api/reviews/$id'
-      path: '/$id'
-      fullPath: '/api/reviews/$id'
-      preLoaderRoute: typeof ApiReviewsIdRouteImport
-      parentRoute: typeof ApiReviewsRoute
+    '/api/instructors': {
+      id: '/api/instructors'
+      path: '/api/instructors'
+      fullPath: '/api/instructors'
+      preLoaderRoute: typeof ApiInstructorsRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/api/instructors/$id': {
-      id: '/api/instructors/$id'
-      path: '/$id'
-      fullPath: '/api/instructors/$id'
-      preLoaderRoute: typeof ApiInstructorsIdRouteImport
-      parentRoute: typeof ApiInstructorsRoute
+    '/api/reviews': {
+      id: '/api/reviews'
+      path: '/api/reviews'
+      fullPath: '/api/reviews'
+      preLoaderRoute: typeof ApiReviewsRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/api/courses/$id': {
-      id: '/api/courses/$id'
+    '/api/tasks': {
+      id: '/api/tasks'
+      path: '/api/tasks'
+      fullPath: '/api/tasks'
+      preLoaderRoute: typeof ApiTasksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/users': {
+      id: '/api/users'
+      path: '/api/users'
+      fullPath: '/api/users'
+      preLoaderRoute: typeof ApiUsersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/assessments/$id': {
+      id: '/api/assessments/$id'
       path: '/$id'
-      fullPath: '/api/courses/$id'
-      preLoaderRoute: typeof ApiCoursesIdRouteImport
-      parentRoute: typeof ApiCoursesRoute
+      fullPath: '/api/assessments/$id'
+      preLoaderRoute: typeof ApiAssessmentsIdRouteImport
+      parentRoute: typeof ApiAssessmentsRoute
     }
     '/api/catalog/$id': {
       id: '/api/catalog/$id'
@@ -478,12 +450,40 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiCatalogIdRouteImport
       parentRoute: typeof ApiCatalogRoute
     }
-    '/api/assessments/$id': {
-      id: '/api/assessments/$id'
+    '/api/courses/$id': {
+      id: '/api/courses/$id'
       path: '/$id'
-      fullPath: '/api/assessments/$id'
-      preLoaderRoute: typeof ApiAssessmentsIdRouteImport
-      parentRoute: typeof ApiAssessmentsRoute
+      fullPath: '/api/courses/$id'
+      preLoaderRoute: typeof ApiCoursesIdRouteImport
+      parentRoute: typeof ApiCoursesRoute
+    }
+    '/api/instructors/$id': {
+      id: '/api/instructors/$id'
+      path: '/$id'
+      fullPath: '/api/instructors/$id'
+      preLoaderRoute: typeof ApiInstructorsIdRouteImport
+      parentRoute: typeof ApiInstructorsRoute
+    }
+    '/api/reviews/$id': {
+      id: '/api/reviews/$id'
+      path: '/$id'
+      fullPath: '/api/reviews/$id'
+      preLoaderRoute: typeof ApiReviewsIdRouteImport
+      parentRoute: typeof ApiReviewsRoute
+    }
+    '/api/tasks/$id': {
+      id: '/api/tasks/$id'
+      path: '/$id'
+      fullPath: '/api/tasks/$id'
+      preLoaderRoute: typeof ApiTasksIdRouteImport
+      parentRoute: typeof ApiTasksRoute
+    }
+    '/api/users/$id': {
+      id: '/api/users/$id'
+      path: '/$id'
+      fullPath: '/api/users/$id'
+      preLoaderRoute: typeof ApiUsersIdRouteImport
+      parentRoute: typeof ApiUsersRoute
     }
   }
 }
@@ -593,3 +593,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
